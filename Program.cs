@@ -86,29 +86,9 @@ namespace HomeWork_8
             Console.WriteLine(value);
         }
         static void Main(string[] args)
-        {
-            /*
-            #region Задание номер 1 (Работа с интовым листом)
-            List<int> list = new List<int>();  // Объявил новый лист типа <int>
-                                               
-            RandomFillingList(list);
-
-            OutputOnConsoleList(list);
-
-            Console.WriteLine("\n\nУдаляем числа которые > 25 но < 50 \n и выводим остаток на консоль\n\n");
-
-            DeleteOnTheList(list);
-            
-            OutputOnConsoleList(list);
-            #endregion
-            */
+        {          
 
             PrintDictOnConsole(DictKeyValue());
-            
-              
-            
-
-            Console.WriteLine("Конец");
             Console.ReadLine();
         }
     }
