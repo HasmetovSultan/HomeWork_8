@@ -9,7 +9,7 @@ namespace HomeWork_8
     internal class Program
     {
        static Random rnd = new Random();
-        #region Методы для первого задания с интовым листом
+        
         /// <summary>
         /// Метод для заполнения интового листа рандомными числами
         /// </summary>
@@ -50,45 +50,25 @@ namespace HomeWork_8
                 }
             }
         }
-        #endregion
+        
 
 
-        static Dictionary<string,string> DictKeyValue()
-        {
-            Dictionary<string, string> dict = new Dictionary<string, string>();
-            string key = "";
-            string value = "";
-            for (; ; )
-            {
-
-                Console.WriteLine($"Введите номер телефона");
-                key = Console.ReadLine();
-                if (key == "" || key == " ") { break; }
-                Console.WriteLine($"Введите Ф.И.О владельца");
-                value = Console.ReadLine();
-                dict.Add(key, value);
-            }
-            return dict;
-        }
-
-        static void PrintDictOnConsole(Dictionary<string,string> dict)
-        {
-            string key = "";
-            string value = "";
-            Console.WriteLine("Введите ключ (Номер телефона)");
-            key = Console.ReadLine();
-            while (!dict.TryGetValue(key, out value))
-            {
-                Console.WriteLine($"Не верный ключ");
-                Console.WriteLine("Введите снова");
-                key = Console.ReadLine();
-            }
-            Console.WriteLine(value);
-        }
+        
         static void Main(string[] args)
-        {          
+        {           
+            
+            List<int> list = new List<int>();  // Объявил новый лист типа <int>
+                                               
+            RandomFillingList(list);
 
-            PrintDictOnConsole(DictKeyValue());
+            OutputOnConsoleList(list);
+
+            Console.WriteLine("\n\nУдаляем числа которые > 25 но < 50 \n и выводим остаток на консоль\n\n");
+
+            DeleteOnTheList(list);
+            
+            OutputOnConsoleList(list);
+            
             Console.ReadLine();
         }
     }
